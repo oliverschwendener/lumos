@@ -21,11 +21,13 @@ var reload = browserSync.reload;
 
 var filesToWatch = [
     "./assets/js/**/*.js",
-    "./assets/scss/**/*.scss"  
+    "./assets/scss/**/*.scss",
+    "./index.html"  
 ];
 
 var scriptFilesToConcat = [
     "./assets/js/jquery.touchSwipe.min.js",
+    "./assets/js/imagesloaded.pkgd.min.js",
     "./assets/js/lumos.js"
 ];
 
