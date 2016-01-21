@@ -1,0 +1,155 @@
+$z-index-container: 10;
+$z-index-img:11;
+$z-index-icons:12;
+
+$font-size: 65px;
+$font-size-mobile: 48px;
+$font-color: rgba(255,255,255,1);
+
+$icon-margin: 15px;
+$icon-margin-mobile: 25px;
+
+$mobile-breakpoint: 768px;
+$desktop-breakpoint: 992px;
+
+@mixin transitionAll() {
+    -moz-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+}
+
+.lumos-img{
+    cursor:pointer;
+}
+
+.lumos-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.75);
+    display: none;
+    z-index: $z-index-container;
+    color: $font-color;
+    z-index: $z-index-icons;
+
+    .img-alt-text{
+        position:fixed;
+        font-family: 'Open Sans', sans-serif;
+        text-shadow:0 0 10px rgba(0,0,0,0.5);
+        bottom: 0;
+        left: 0;
+        padding:15px;
+        width:100%;
+        text-align:center;
+
+        @media screen and (min-width:$mobile-breakpoint){
+            text-align:left;
+            top:0;
+        }
+
+        @media screen and (min-width: $desktop-breakpoint){
+            padding:25px;
+        }
+    }
+
+    img {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -o-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        width: auto;
+        max-height: 100%;
+        max-width: 100%;
+        z-index: $z-index-img;
+        box-shadow: 5px 5px 50px rgba(0,0,0,0.5);
+        
+        @media screen and (min-width: $mobile-breakpoint){
+            border: 2px solid rgba(255,255,255,1);
+            max-height: 85%;
+            max-width: 85%;
+        }
+    }
+
+    svg {
+        position: fixed;
+        top: 50%;
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        z-index: $z-index-icons;
+        height: 25px;
+        width: 25px;
+        cursor: pointer;
+        fill: #fff;
+        @include transitionAll();
+
+        &:hover {
+            @media screen and (min-width: $mobile-breakpoint){
+                -moz-transform: translateY(-50%) scale(1.5);
+                -ms-transform: translateY(-50%) scale(1.5);
+                -o-transform: translateY(-50%) scale(1.5);
+                -webkit-transform: translateY(-50%) scale(1.5);
+                transform: translateY(-50%) scale(1.5);   
+            }
+        }
+
+        @media screen and (min-width: $mobile-breakpoint) {
+            height: 30px;
+            width: 30px;
+        }
+        
+        @media screen and (min-width: $desktop-breakpoint){
+            height: 40px;
+            width: 40px;
+        }
+    }
+
+    .lumos-next {
+        right: $icon-margin-mobile;
+
+        @media screen and (min-width: $mobile-breakpoint) {
+            right: $icon-margin;
+        }
+    }
+
+    .lumos-prev {
+        left: $icon-margin-mobile;
+
+        @media screen and (min-width: $mobile-breakpoint) {
+            left: $icon-margin;
+        }
+    }
+
+    .lumos-close {
+        top:25px;
+        right:25px;
+        height:15px;
+        width:15px;
+        transform: translateY(-50%);
+        
+        @media screen and (min-width: $mobile-breakpoint){
+            top: 35px;
+            right: 25px;
+            height: 20px;
+            width: 20px;
+        }
+        
+        @media screen and (min-width: $desktop-breakpoint){
+            height: 25px;
+            width: 25px;
+        }
+    }
+    
+    .lumos-name{
+        display: none;
+    }
+}
