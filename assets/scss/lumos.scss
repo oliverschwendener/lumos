@@ -1,6 +1,7 @@
 $z-index-container: 10;
 $z-index-img:11;
 $z-index-icons:12;
+$z-index-alt-text: 13;
 
 $font-size: 65px;
 $font-size-mobile: 48px;
@@ -36,15 +37,15 @@ $desktop-breakpoint: 992px;
     color: $font-color;
     z-index: $z-index-icons;
 
-    .img-alt-text{
+    .lumos-alt-text{
         position:fixed;
         font-family: 'Open Sans', sans-serif;
         text-shadow:0 0 10px rgba(0,0,0,0.5);
         bottom: 0;
         left: 0;
         padding:15px;
-        width:100%;
         text-align:center;
+        z-index: $z-index-alt-text;
 
         @media screen and (min-width:$mobile-breakpoint){
             text-align:left;
