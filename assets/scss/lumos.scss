@@ -21,10 +21,6 @@ $desktop-breakpoint: 992px;
     transition: all 150ms ease-in-out;
 }
 
-.lumos-img{
-    cursor:pointer;
-}
-
 .lumos-container {
     position: fixed;
     top: 0;
@@ -42,6 +38,7 @@ $desktop-breakpoint: 992px;
         font-family: 'Open Sans', sans-serif;
         text-shadow:0 0 10px rgba(0,0,0,0.5);
         bottom: 0;
+        width: 100%;
         left: 0;
         padding:15px;
         text-align:center;
@@ -50,6 +47,8 @@ $desktop-breakpoint: 992px;
         @media screen and (min-width:$mobile-breakpoint){
             text-align:left;
             top:0;
+            max-width: 50%;
+            max-height: 25%;
         }
 
         @media screen and (min-width: $desktop-breakpoint){
