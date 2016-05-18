@@ -39,7 +39,7 @@ $(closeButton).click(function () {
     closeLumos();
 });
 lumosContainer.on('click', function(event) {
-    if (!$(event.target).closest(lumosImage).length) {
+    if (!$(event.target).closest(lumosImage).length && !$(event.target).closest(allButtons).length) {
         closeLumos();
     }
 });
