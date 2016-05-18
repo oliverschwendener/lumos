@@ -22,6 +22,7 @@ var reload = browserSync.reload;
 var filesToWatch = [
     "./assets/js/**/*.js",
     "./assets/scss/**/*.scss",
+    "./css/**/*.css",
     "./index.html"  
 ];
 

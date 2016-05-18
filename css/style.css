@@ -1,4 +1,14 @@
-img{
-    width:20%;
-    float:left;
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.image-thumbnail{
+    width:33.33%;
+    float: left;
+    padding: 5px;
+}
+
+.container-full-width{
+    width: 100%;
+    overflow: auto;
 }

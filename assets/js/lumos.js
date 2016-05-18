@@ -14,7 +14,6 @@ var allButtons = ".lumos-next, .lumos-prev, .lumos-close, .lumos-alt-text";
 var spinner = $(".lumos-container .spinner");
 var animationSpeed = 250;
 var fadeInSpeed = 750;
-var mouseIsOnImage = false;
 var isSingleImage = false;
 var isFirst = false;
 var isLast = false;
@@ -37,8 +36,8 @@ $(nextButton).click(function () {
 $(closeButton).click(function () {
     closeLumos();
 });
-lumosContainer.click(function () {
-    if (!mouseIsOnImage) {
+lumosContainer.on('click', function(event) {
+    if (!$(event.target).closest(lumosImage).length) {
         closeLumos();
     }
 });
@@ -56,20 +55,6 @@ $(document).keyup(function (e) {
         if (isLast || isSingleImage) { return; }
         openLumos(getNextImage("next"), lumosGalleryName.text());
     }
-});
-    
-// Mouse Enter / Leave Events
-lumosImage.mouseenter(function () {
-    mouseIsOnImage = true;
-});
-lumosImage.mouseleave(function () {
-    mouseIsOnImage = false;
-});
-$(allButtons).mouseenter(function () {
-    mouseIsOnImage = true;
-});
-$(allButtons).mouseleave(function () {
-    mouseIsOnImage = false;
 });
 
 // Swipe Gestures
@@ -151,6 +136,7 @@ function closeLumos() {
     isLast = false;
     setTimeout(function () {
         enableButtons([prevButton, nextButton]);
+        lumosImage.hide();
     }, animationSpeed);
 }
 
