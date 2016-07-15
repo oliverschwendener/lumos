@@ -1,7 +1,7 @@
 # Lumos
 
 ## What is it?
-Lumos.js is a simple javascript library to add an image overlay to your website.
+Lumos.js is a simple jQuery Plugin to add an image overlay to your website.
 Perfect for single images and image galleries!
 
 ## Why use it?
