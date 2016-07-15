@@ -9,7 +9,7 @@ var browserSync = require("browser-sync");gulp
 
 var options = {
     port: 8080,
-    open: false, // don't open new tab in browser,
+    open: true, // don't open new tab in browser,
     reloadOnRestart: true,
     logFileChanges: true,
     server:{
