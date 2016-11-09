@@ -86,7 +86,7 @@ If you want to display the `alt` attribute just add the `alt="..."` attribute to
 |Next button|.lumos-container .lumos-next|
 |Prev button|.lumos-container .lumos-prev|
 |Close button|.lumos-container .lumos-close|
-|Image Loader|.lumos-container .spinner|
+|Image Loader|.lumos-container .spinner-container .spinner|
 
 ## License
 100% FREE for commercial and non-commercial use!
