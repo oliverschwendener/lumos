@@ -38,8 +38,9 @@ $(nextButton).click(function () {
 $(closeButton).click(function () {
     closeLumos();
 });
-lumosContainer.on('click', function (event) {
-    if (!$(event.target).closest(lumosImage).length && !$(event.target).closest(allButtons).length) {
+
+lumosContainer.click(function (event) {
+    if (event.target.className === lumosContainer[0].className) {
         closeLumos();
     }
 });
