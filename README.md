@@ -1,10 +1,12 @@
 # Lumos
 
 ## What is it?
+
 Lumos.js is a simple jQuery Plugin to add an image overlay to your website.
 Perfect for single images and image galleries!
 
 ## Why use it?
+
 * easy to use
 * easy to customize
 * lightweight (total 25KB)
@@ -13,13 +15,19 @@ Perfect for single images and image galleries!
 * only vector icons
 
 ## Demo
+
 Check out the [Official Website](http://lumos.oliverschwendener.ch)
 
 ## Requirements
+
 * The only requirement is [jQuery](https://jquery.com/)
 
 ## Usage
-1. Link the `lumos.css` file before your own stylesheets
+
+### Stylesheet
+
+Link the `lumos.css` file before your own stylesheets
+
 ``` html
 <head>
     ...
@@ -28,7 +36,10 @@ Check out the [Official Website](http://lumos.oliverschwendener.ch)
 </head>
 ```
 
-2. Link the `lumos-min.js` file before the closing tag of your body after jQuery
+### Javascript
+
+Add the `lumos-min.js` file before the closing tag of your body after jQuery
+
 ``` html
     ...
     <script src="js/jQuery.min.js"></script>
@@ -38,43 +49,53 @@ Check out the [Official Website](http://lumos.oliverschwendener.ch)
 ...
 ```
 
-3. HTML Structure
+### HTML Structure
 
-    **Single Image**: Add an `a` element around your image with the `lumos-link` class.
-    ``` html
-    <a href="path/to/your-image.jpg" class="lumos-link">
-        <img src="path/to/your-thumbnail.jpg">
-    </a>
-    ```
-    **Image Group**: Add an `a` element around your image with the `lumos-link` class. Add a `data-lumos="..."` tag. The `data-lumos` attribute will combine all images with the same value to the same image group.
-    ``` html
-    <!-- Gallery 1 -->
-    <a href="path/to/your-image1.jpg" class="lumos-link" data-lumos="gallery1">
-        <img src="path/to/your-thumbnail1.jpg">
-    </a>
-    <a href="path/to/your-image2.jpg" class="lumos-link" data-lumos="gallery1">
-        <img src="path/to/your-thumbnail2.jpg">
-    </a>
-    <a href="path/to/your-image3.jpg" class="lumos-link" data-lumos="gallery1">
-        <img src="path/to/your-thumbnail3.jpg">
-    </a>
+#### Single Image
 
-    <!-- Gallery 2 -->
-    <a href="path/to/your-image4.jpg" class="lumos-link" data-lumos="gallery2">
-        <img src="path/to/your-thumbnail4.jpg">
-    </a>
-    <a href="path/to/your-image5.jpg" class="lumos-link" data-lumos="gallery2">
-        <img src="path/to/your-thumbnail5.jpg">
-    </a>
-    ```
+Add an `a` element around your image with the `lumos-link` class.
 
-4. Display the alt attribute
-If you want to display the `alt` attribute just add the `alt="..."` attribute to the image.
+``` html
+<a href="path/to/your-image.jpg" class="lumos-link">
+    <img src="path/to/your-thumbnail.jpg">
+</a>
+```
+
+#### Image Group
+
+Add an `a` element around your image with the `lumos-link` class. Add a `data-lumos="..."` tag. The `data-lumos` attribute will combine all images with the same value to the same image group.
+
+``` html
+<!-- Gallery 1 -->
+<a href="path/to/your-image1.jpg" class="lumos-link" data-lumos="gallery1">
+    <img src="path/to/your-thumbnail1.jpg">
+</a>
+<a href="path/to/your-image2.jpg" class="lumos-link" data-lumos="gallery1">
+    <img src="path/to/your-thumbnail2.jpg">
+</a>
+<a href="path/to/your-image3.jpg" class="lumos-link" data-lumos="gallery1">
+    <img src="path/to/your-thumbnail3.jpg">
+</a>
+
+<!-- Gallery 2 -->
+<a href="path/to/your-image4.jpg" class="lumos-link" data-lumos="gallery2">
+    <img src="path/to/your-thumbnail4.jpg">
+</a>
+<a href="path/to/your-image5.jpg" class="lumos-link" data-lumos="gallery2">
+    <img src="path/to/your-thumbnail5.jpg">
+</a>
+```
+
+#### Image description
+
+If you want to display a description for your image just add a value to the `alt` attribute of the image.
+
 ``` html
 <img src="path/to/your-thumbnail1.jpg" alt="Image 1">
 ```
 
 ## Customization
+
 ### You can customize the look of your lumos overlay with your own CSS!
 
 |Customize|CSS Selector|
@@ -89,6 +110,9 @@ If you want to display the `alt` attribute just add the `alt="..."` attribute to
 |Loading icon|.lumos-container .spinner-container .spinner|
 
 ## License
+
+Licensed under the [MIT](LICENSE.md) License.
+
 100% FREE for commercial and non-commercial use!
 
 Feel free to contact me for some feedback!
