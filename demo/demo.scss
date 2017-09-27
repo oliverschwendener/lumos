@@ -11,8 +11,13 @@ body{
 }
 
 a, a:link, a:active, a:visited {
+    transition: all 150ms ease-in-out;
     color: $link-color;
     text-decoration: none;
+}
+
+a:hover {
+    color: lighten($link-color, 15);
 }
 
 .container{
@@ -27,7 +32,6 @@ button {
     background-color: transparent;    
     font-weight: 700;
     padding: 5px 10px;
-    border-radius: 3px;
     border-color: $text-color;
     background-color: $text-color;
     color: #fff;
@@ -60,6 +64,10 @@ button {
 
     img {
         width: 100%;
-        border-radius: 3px;
     }
+}
+
+footer {
+    text-align: center;
+    margin: 25px 0;   
 }

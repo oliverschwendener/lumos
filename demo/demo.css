@@ -5,8 +5,12 @@ body {
   padding: 0; }
 
 a, a:link, a:active, a:visited {
+  transition: all 150ms ease-in-out;
   color: #3498db;
   text-decoration: none; }
+
+a:hover {
+  color: #75b9e7; }
 
 .container {
   position: relative;
@@ -19,7 +23,6 @@ button {
   background-color: transparent;
   font-weight: 700;
   padding: 5px 10px;
-  border-radius: 3px;
   border-color: #000;
   background-color: #000;
   color: #fff;
@@ -43,5 +46,8 @@ button {
       width: 32%; } }
 
 .gallery img {
-  width: 100%;
-  border-radius: 3px; }
+  width: 100%; }
+
+footer {
+  text-align: center;
+  margin: 25px 0; }
