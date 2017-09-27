@@ -1,6 +1,7 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: #000;
+  font-size: 14px;
   margin: 0;
   padding: 0; }
 
@@ -10,28 +11,13 @@ a, a:link, a:active, a:visited {
   text-decoration: none; }
 
 a:hover {
-  color: #75b9e7; }
+  color: #5faee3; }
 
 .container {
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
   padding: 10px 25px; }
-
-button {
-  transition: all 150ms ease-in-out;
-  background-color: transparent;
-  font-weight: 700;
-  padding: 5px 10px;
-  border-color: #000;
-  background-color: #000;
-  color: #fff;
-  cursor: pointer; }
-  button:focus {
-    outline: none; }
-  button:hover {
-    background-color: transparent;
-    color: #000; }
 
 .gallery .gallery-item {
   display: block;
