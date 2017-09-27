@@ -1,15 +1,16 @@
 'use strict';
 
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var minify = require('gulp-minify');
-var sass = require('gulp-sass');
-var minifyCss = require('gulp-minify-css');
-var browserSync = require('browser-sync'); gulp
+const gulp = require('gulp');
+const concat = require('gulp-concat');
+const minify = require('gulp-minify');
+const sass = require('gulp-sass');
+const minifyCss = require('gulp-minify-css');
+const browserSync = require('browser-sync');
+const zip = require('gulp-zip');
 
-var options = {
+const options = {
     port: 8080,
-    open: true, // don't open new tab in browser,
+    open: false,
     reloadOnRestart: true,
     logFileChanges: true,
     server: {
@@ -17,48 +18,74 @@ var options = {
     }
 };
 
-var reload = browserSync.reload;
+const demoFiles = {
+    src: './demo/demo.scss',
+    out: './demo/demo.css'
+}
 
-var filesToWatch = [
-    './assets/js/**/*.js',
-    './assets/scss/**/*.scss',
-    './css/**/*.css',
-    './index.html'
-];
+const sourceFiles = {
+    js: './assets/js/lumos.js',
+    scss: './assets/scss/**/*.scss',
+    html: './index.html'
+}
 
-var scriptFilesToConcat = [
-    './assets/js/jquery.touchSwipe.min.js',
-    './assets/js/imagesloaded.pkgd.min.js',
+const scriptFilesToConcat = [
+    './node_modules/jquery-touchswipe/jquery.touchSwipe.min.js',
+    './node_modules/imagesloaded/imagesloaded.pkgd.min.js',
     './assets/js/lumos.js'
 ];
 
-var scriptFile = 'lumos.js';
-var scriptDestFolder = './js'
+const destinationFolders = {
+    js: './dist/js',
+    css: './dist/css',
+    zip: './zip'
+}
 
-var sassFileToCompile = './assets/scss/lumos.scss';
-var cssDestFolder = './css';
-
-
-gulp.task('scripts', function () {
+gulp.task('scripts', () => {
     return gulp
         .src(scriptFilesToConcat)
-        .pipe(concat(scriptFile))
+        .pipe(concat('lumos.js'))
         .pipe(minify())
-        .pipe(gulp.dest(scriptDestFolder));
+        .pipe(gulp.dest(destinationFolders.js));
 });
 
-gulp.task('sass', function () {
+gulp.task('sass', () => {
     return gulp
-        .src(sassFileToCompile)
+        .src('./assets/scss/lumos.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(minifyCss())
-        .pipe(gulp.dest(cssDestFolder))
+        .pipe(gulp.dest(destinationFolders.css))
         .pipe(browserSync.stream());
 });
 
-gulp.task('build', ['scripts', 'sass'])
+gulp.task('zip', () => {
+    return gulp
+        .src([
+            `${destinationFolders.js}/**/*.js`,
+            `${destinationFolders.css}/**/*.css`
+        ])
+        .pipe(zip('lumos.zip'))
+        .pipe(gulp.dest(destinationFolders.zip));
+});
 
-gulp.task('serve', function () {
+gulp.task('demo', () => {
+    return gulp
+        .src('./demo/demo.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./demo'));
+});
+
+gulp.task('build', [
+    'scripts',
+    'sass',
+    'zip'
+]);
+
+gulp.task('serve', () => {
     browserSync(options);
-    gulp.watch(filesToWatch, ['scripts', 'sass']).on('change', reload);
+    gulp.watch(sourceFiles.js, ['scripts']).on('change', browserSync.reload);
+    gulp.watch(sourceFiles.js, ['styles']).on('change', browserSync.reload);
+    gulp.watch(sourceFiles.html).on('change', browserSync.reload);
+    gulp.watch(demoFiles.src, ['demo']).on('change', browserSync.reload);
+    gulp.watch([sourceFiles.js, sourceFiles.scss], ['zip']);
 });

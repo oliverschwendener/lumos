@@ -81,12 +81,12 @@ If you want to display the `alt` attribute just add the `alt="..."` attribute to
 |-----|-----|
 |General overlay of Lumos|.lumos-container|
 |Lumos image|.lumos-container .lumos-img|
-|Alt text|.lumos-container .lumos-alt-text|
+|Image description|.lumos-container .lumos-alt-text|
 |All control buttons|.lumos-container svg|
 |Next button|.lumos-container .lumos-next|
 |Prev button|.lumos-container .lumos-prev|
 |Close button|.lumos-container .lumos-close|
-|Image Loader|.lumos-container .spinner-container .spinner|
+|Loading icon|.lumos-container .spinner-container .spinner|
 
 ## License
 100% FREE for commercial and non-commercial use!

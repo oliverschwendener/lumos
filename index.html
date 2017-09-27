@@ -3,67 +3,105 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-    crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/lumos.css">
+    <link rel="stylesheet" href="/demo/demo.css">
+    <link rel="stylesheet" href="/dist/css/lumos.css">
 </head>
 
 <body>
 
-    <div class="container">
+    <header>
+        <div class="container">
+            <h1>lumos.js</h1>
+            <p>nothing fancy - just simple and clean</p>
 
-        <div class="row">
-            <div class="col-sm-2">
-                <img class="img-circle" src="/graphics/logo.svg" alt="Lumos Logo">
-            </div>
-            <div class="col-sm-10">
-                <h1>Lumos Demo</h1>
-            </div>
-        </div>
-        
-        <div class="container-full-width">
-            <h2>Single Images</h2>
-            <a href="img/single-image1-big.jpg" class="lumos-link">
-                <img class="image-thumbnail" src="img/single-image1.jpg" alt="Single Image 1">
+            <a href="/download/lumos.min.zip">
+                <button>                    
+                    Download
+                    <div class="button-background"></div>
+                </button>
             </a>
-            <a href="img/single-image2-big.jpg" class="lumos-link">
-                <img class="image-thumbnail" src="img/single-image2.jpg" alt="Single Image 2">
-            </a>
-            <a href="img/single-image3-big.jpg" class="lumos-link">
-                <img class="image-thumbnail" src="img/single-image3.jpg" alt="Single Image 3">
+            <a href="https://github.com/oliverschwendener/lumos" target="_blank">
+                <button>
+                    Lumos on GitHub
+                    <div class="button-background"></div>
+                </button>
             </a>
         </div>
-        
-        <div class="container-full-width">
-            <h2>Gallery 1</h2>
-            <a class="lumos-link" data-lumos="gallery1" href="img/img2.jpg" class="lumos-link">
-                <img class="image-thumbnail" src="img/img2.jpg" alt="Image 2">
-            </a>
-            <a class="lumos-link" data-lumos="gallery1" href="img/img3.jpg" class="lumos-link">
-                <img class="image-thumbnail" src="img/img3.jpg" alt="Image 3">
-            </a>
-            <a class="lumos-link" data-lumos="gallery1" href="img/img4.jpg" class="lumos-link">
-                <img class="image-thumbnail" src="img/img4.jpg" alt="Image 4">
-            </a>
-        </div>
-        
-        <div class="container-full-width">
-            <h2>Gallery 2</h2>
-            <a class="lumos-link" data-lumos="gallery2" href="img/img5.jpg" class="lumos-link">
-                <img class="image-thumbnail" src="img/img5.jpg" alt="Image 5">
-            </a>
-            <a class="lumos-link" data-lumos="gallery2" href="img/img6.jpg" class="lumos-link">
-                <img class="image-thumbnail" src="img/img6.jpg" alt="Image 6">
-            </a>
-            <a class="lumos-link" data-lumos="gallery2" href="img/img1.jpg" class="lumos-link">
-                <img class="image-thumbnail" src="img/img1.jpg" alt="Image 1">
-            </a>
-        </div>
-    </div>
+    </header>
 
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="js/lumos.js"></script>
+    <main>
+        <div class="container">
+
+            <h1>Documentation</h1>
+            <p>Get the documentation <a href="https://github.com/oliverschwendener/lumos">here</a>.</p>
+
+            <h1>Demo</h1>
+            <p>Single Images</p>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <a href="/demo/img/img1.jpg" class="lumos-link">
+                        <img src="/demo/img/img1.jpg">
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="/demo/img/img2.jpg" class="lumos-link">
+                        <img src="/demo/img/img2.jpg">
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="/demo/img/img3.jpg" class="lumos-link">
+                        <img src="/demo/img/img3.jpg">
+                    </a>
+                </div>
+            </div>
+
+            <p>Image Group</p>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <a href="/demo/img/img4.jpg" class="lumos-link" data-lumos="demo2">
+                        <img src="/demo/img/img4.jpg">
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="/demo/img/img5.jpg" class="lumos-link" data-lumos="demo2">
+                            <img src="/demo/img/img5.jpg">
+                        </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="/demo/img/img6.jpg" class="lumos-link" data-lumos="demo2">
+                                <img src="/demo/img/img6.jpg">
+                            </a>
+                </div>
+            </div>
+
+            <p>Image Group with descriptions</p>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <a href="/demo/img/img7.jpg" class="lumos-link" data-lumos="demo3">
+                        <img src="/demo/img/img7.jpg" alt="Buchs SG, Switzerland">
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="/demo/img/img8.jpg" class="lumos-link" data-lumos="demo3">
+                        <img src="/demo/img/img8.jpg" alt="Vienna, Austria">
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="/demo/img/img9.jpg" class="lumos-link" data-lumos="demo3">
+                        <img src="/demo/img/img9.jpg" alt="Vienna, Austria">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        lumos.js - created by <a href="http://oliverschwendener.ch" target="_blank">Oliver Schwendener</a>
+    </footer>
+
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/dist/js/lumos.js"></script>
 </body>
 
 </html>
