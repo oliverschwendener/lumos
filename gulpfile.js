@@ -64,7 +64,7 @@ gulp.task('zip', () => {
             `${destinationFolders.js}/**/*.js`,
             `${destinationFolders.css}/**/*.css`
         ])
-        .pipe(zip('lumos.zip'))
+        .pipe(zip('lumos-latest.zip'))
         .pipe(gulp.dest(destinationFolders.zip));
 });
 
@@ -81,7 +81,7 @@ gulp.task('build', [
     'zip'
 ]);
 
-gulp.task('serve', () => {
+gulp.task('serve', ['build'],() => {
     browserSync(options);
     gulp.watch(sourceFiles.js, ['scripts']).on('change', browserSync.reload);
     gulp.watch(sourceFiles.js, ['styles']).on('change', browserSync.reload);
