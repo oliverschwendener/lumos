@@ -19,20 +19,24 @@ a:hover {
   margin: 0 auto;
   padding: 10px 25px; }
 
-.gallery .gallery-item {
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 15px; }
+.gallery {
+  margin: 0 0 30px; }
   @media (min-width: 768px) {
-    .gallery .gallery-item {
-      padding: 0;
-      margin: 0;
-      display: inline-block;
-      width: 32%; } }
-
-.gallery img {
-  width: 100%; }
+    .gallery {
+      margin: 0 -15px 30px; } }
+  .gallery .gallery-item {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px; }
+    @media (min-width: 768px) {
+      .gallery .gallery-item {
+        display: inline-block;
+        padding: 0 15px;
+        margin: 0;
+        width: 32%; } }
+  .gallery img {
+    width: 100%; }
 
 footer {
   text-align: center;
