@@ -2,7 +2,7 @@
 
 ## What is it?
 
-Lumos.js is a simple jQuery Plugin to add an image overlay to your website.
+Lumos.js is a simple jQuery plugin to add an image overlay to your website.
 Perfect for single images and image galleries!
 
 ## Why use it?
@@ -16,7 +16,7 @@ Perfect for single images and image galleries!
 
 ## Demo
 
-Check out the [Official Website](http://lumos.oliverschwendener.ch)
+Check out the [official website](https://lumos.oliverschwendener.ch)
 
 ## Requirements
 
@@ -49,9 +49,9 @@ Add the `lumos-min.js` file before the closing tag of your body after jQuery
 ...
 ```
 
-### HTML Structure
+### HTML structure
 
-#### Single Image
+#### Single image
 
 Add an `a` element around your image with the `lumos-link` class.
 
@@ -61,7 +61,7 @@ Add an `a` element around your image with the `lumos-link` class.
 </a>
 ```
 
-#### Image Group
+#### Image group
 
 Add an `a` element around your image with the `lumos-link` class. Add a `data-lumos="..."` tag. The `data-lumos` attribute will combine all images with the same value to the same image group.
 
@@ -111,7 +111,7 @@ If you want to display a description for your image just add a value to the `alt
 
 ## License
 
-Licensed under the [MIT](LICENSE.md) License.
+Licensed under the [MIT](LICENSE.md) license.
 
 100% FREE for commercial and non-commercial use!
 
