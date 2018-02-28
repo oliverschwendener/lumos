@@ -9,7 +9,6 @@ $font-color: rgba(255,255,255,1);
 
 $icon-margin: 15px;
 $icon-margin-mobile: 10px;
-$icon-background: rgba(0,0,0,0.6);
 
 $mobile-breakpoint: 768px;
 $desktop-breakpoint: 992px;
@@ -92,7 +91,6 @@ $desktop-breakpoint: 992px;
         width: 25px;
         cursor: pointer;
         fill: #fff;
-        background:$icon-background;
         padding:5px;
         @include transitionAll();
 
@@ -121,17 +119,21 @@ $desktop-breakpoint: 992px;
 
     .lumos-next {
         right: $icon-margin-mobile;
+        opacity: 0;
 
         @media screen and (min-width: $mobile-breakpoint) {
             right: $icon-margin;
+            opacity: 1;
         }
     }
 
     .lumos-prev {
         left: $icon-margin-mobile;
+        opacity: 0;
 
         @media screen and (min-width: $mobile-breakpoint) {
             left: $icon-margin;
+            opacity: 1;
         }
     }
 
@@ -140,7 +142,6 @@ $desktop-breakpoint: 992px;
         right:25px;
         height:25px;
         width:25px;
-        background:$icon-background;
         padding:5px;
         transform: translateY(-50%) translateX(50%);
         
@@ -153,7 +154,6 @@ $desktop-breakpoint: 992px;
             right: 30px;
             height: 30px;
             width: 30px;
-            background: none;
         }
         
         @media screen and (min-width: $desktop-breakpoint){
