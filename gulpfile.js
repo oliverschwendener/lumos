@@ -6,7 +6,6 @@ const minify = require('gulp-minify');
 const sass = require('gulp-sass');
 const minifyCss = require('gulp-minify-css');
 const browserSync = require('browser-sync');
-const zip = require('gulp-zip');
 
 const options = {
     port: 8080,
@@ -38,7 +37,6 @@ const scriptFilesToConcat = [
 const destinationFolders = {
     js: './dist/js',
     css: './dist/css',
-    zip: './zip'
 }
 
 gulp.task('scripts', () => {
@@ -58,16 +56,6 @@ gulp.task('sass', () => {
         .pipe(browserSync.stream());
 });
 
-gulp.task('zip', () => {
-    return gulp
-        .src([
-            `${destinationFolders.js}/**/*.js`,
-            `${destinationFolders.css}/**/*.css`
-        ])
-        .pipe(zip('lumos-latest.zip'))
-        .pipe(gulp.dest(destinationFolders.zip));
-});
-
 gulp.task('demo', () => {
     return gulp
         .src('./demo/demo.scss')
@@ -77,15 +65,13 @@ gulp.task('demo', () => {
 
 gulp.task('build', [
     'scripts',
-    'sass',
-    'zip'
+    'sass'
 ]);
 
-gulp.task('serve', ['build'],() => {
+gulp.task('serve', ['build'], () => {
     browserSync(options);
     gulp.watch(sourceFiles.js, ['scripts']).on('change', browserSync.reload);
-    gulp.watch(sourceFiles.js, ['styles']).on('change', browserSync.reload);
+    gulp.watch(sourceFiles.scss, ['sass']).on('change', browserSync.reload);
     gulp.watch(sourceFiles.html).on('change', browserSync.reload);
     gulp.watch(demoFiles.src, ['demo']).on('change', browserSync.reload);
-    gulp.watch([sourceFiles.js, sourceFiles.scss], ['zip']);
 });
