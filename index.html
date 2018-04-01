@@ -11,97 +11,40 @@
 
 <body>
 
-    <header>
-        <div class="header-container">
-            <div class="header-section-left">
-                <h1 class="header-title">lumos.js</h1>
-                <p class="header-description">Lumos.js is a simple jQuery plugin to add an image overlay to your website. Perfect for single images and
-                    image galleries!
-                </p>
-            </div>
-            <div class="header-section-right">
-                <a class="header-link" href="https://github.com/oliverschwendener/lumos">
-                    Download
-                </a>
-                <a class="header-link" href="https://github.com/oliverschwendener/lumos">
-                    Docs
-                </a>
-            </div>
+    <div class="container">
+        <div class="container-item">
+            <img class="example-img" data-action="lumos" src="./demo/img/img1.jpg" alt="Example 1">
         </div>
-    </header>
-
-    <main>
-        <div class="container">
-
-            <h2>Demo</h2>
-            <h3>Single Images</h3>
-            <div class="gallery">
-                <div class="gallery-item">
-                    <a href="/demo/img/img1.jpg" class="lumos-link">
-                        <img src="/demo/img/img1.jpg">
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="/demo/img/img2.jpg" class="lumos-link">
-                        <img src="/demo/img/img2.jpg">
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="/demo/img/img3.jpg" class="lumos-link">
-                        <img src="/demo/img/img3.jpg">
-                    </a>
-                </div>
-            </div>
-
-            <h3>Image Group</h3>
-            <div class="gallery">
-                <div class="gallery-item">
-                    <a href="/demo/img/img4.jpg" class="lumos-link" data-lumos="demo2">
-                        <img src="/demo/img/img4.jpg">
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="/demo/img/img5.jpg" class="lumos-link" data-lumos="demo2">
-                        <img src="/demo/img/img5.jpg">
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="/demo/img/img6.jpg" class="lumos-link" data-lumos="demo2">
-                        <img src="/demo/img/img6.jpg">
-                    </a>
-                </div>
-            </div>
-
-            <h3>Image Group with descriptions</h3>
-            <div class="gallery">
-                <div class="gallery-item">
-                    <a href="/demo/img/img7.jpg" class="lumos-link" data-lumos="demo3">
-                        <img src="/demo/img/img7.jpg" alt="Buchs SG, Switzerland">
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="/demo/img/img8.jpg" class="lumos-link" data-lumos="demo3">
-                        <img src="/demo/img/img8.jpg" alt="Vienna, Austria">
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="/demo/img/img9.jpg" class="lumos-link" data-lumos="demo3">
-                        <img src="/demo/img/img9.jpg" alt="Vienna, Austria">
-                    </a>
-                </div>
-            </div>
-
+        <div class="container-item">
+            <img class="example-img" data-action="lumos" src="./demo/img/img2.jpg" alt="Example 2">
         </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            lumos.js - created by
-            <a href="https://oliverschwendener.ch" target="_blank">Oliver Schwendener</a>
+        <div class="container-item">
+            <img class="example-img" data-action="lumos" src="./demo/img/img3.jpg" alt="Example 3">
         </div>
-    </footer>
+        <div class="container-item">
+            <img class="example-img" data-action="lumos" src="./demo/img/img4.jpg" alt="Example 4">
+        </div>
+        <div class="container-item">
+            <img class="example-img" data-action="lumos" src="./demo/img/img5.jpg" alt="Example 5">
+        </div>
+        <div class="container-item">
+            <img class="example-img" data-action="lumos" src="./demo/img/img6.jpg" alt="Example 6">
+        </div>
+        <div class="container-item">
+            <img class="example-img" data-action="lumos" src="./demo/img/img7.jpg" alt="Example 7">
+        </div>
+        <div class="container-item">
+            <img class="example-img" data-action="lumos" src="./demo/img/img8.jpg" alt="Example 8">
+        </div>
+        <div class="container-item">
+            <img class="example-img" data-action="lumos" src="./demo/img/img9.jpg" alt="Example 9">
+        </div>
+    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <div class="lumos-container" id="lumos-container">
+        <img src="./demo/img/img1.jpg" alt="" class="lumos-image" id="lumos-image">
+    </div>
+
     <script src="/dist/js/lumos.js"></script>
 </body>
 
