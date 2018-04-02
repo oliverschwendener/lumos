@@ -14,7 +14,8 @@ const options = {
     logFileChanges: true,
     server: {
         baseDir: ['./']
-    }
+    },
+    notify: false,
 };
 
 const demoFiles = {
