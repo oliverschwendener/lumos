@@ -1,6 +1,6 @@
 {
   "name": "lumos",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Javascript Library to overlay Images",
   "repository": {
     "type": "git",
@@ -11,7 +11,11 @@
     "build": "./node_modules/.bin/gulp build"
   },
   "authors": [
-    "Oliver Schwendener"
+    {
+      "name": "Oliver Schwendener",
+      "email": "oliver.schwendener@hotmail.com",
+      "url": "https://oliverschwendener.ch"
+    }
   ],
   "license": "MIT",
   "devDependencies": {
