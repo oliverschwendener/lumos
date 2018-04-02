@@ -1,118 +1,47 @@
-# lumos.js
+# lumos
 
-## What is it?
+## What is lumos?
 
-Lumos.js is a simple jQuery plugin to add an image overlay to your website.
-Perfect for single images and image galleries!
+Lumos.js is a simple javascript library to add an image overlay to your website.
 
 ## Why use it?
 
-* easy to use
-* easy to customize
-* lightweight (total 25KB)
+* easy to set up
+* customizable
+* lightweight (total 3KB)
 * responsive
-* touch gestures
-* only vector icons
+* no dependencies
 
 ## Demo
 
-Check out the [official website](https://lumos.oliverschwendener.ch)
-
-## Requirements
-
-* The only requirement is [jQuery](https://jquery.com/)
+Check out the [official website](https://lumos.oliverschwendener.ch).
 
 ## Usage
 
-### Stylesheet
-
-Link the `lumos.css` file before your own stylesheets
-
-``` html
-<head>
-    ...
-    <link rel="stylesheet" href="css/lumos.css">
-    <link rel="stylesheet" href="css/your-stylesheets.css">>
-</head>
-```
-
-### Javascript
-
-Add the `lumos-min.js` file before the closing tag of your body after jQuery
-
-``` html
-    ...
-    <script src="js/jQuery.min.js"></script>
-    <script src="js/lumos-min.js"></script>
-    <script src="js/your-scripts.js"></script>
-</body>
-...
-```
-
-### HTML structure
-
-#### Single image
-
-Add an `a` element around your image with the `lumos-link` class.
-
-``` html
-<a href="path/to/your-image.jpg" class="lumos-link">
-    <img src="path/to/your-thumbnail.jpg">
-</a>
-```
-
-#### Image group
-
-Add an `a` element around your image with the `lumos-link` class. Add a `data-lumos="..."` tag. The `data-lumos` attribute will combine all images with the same value to the same image group.
-
-``` html
-<!-- Gallery 1 -->
-<a href="path/to/your-image1.jpg" class="lumos-link" data-lumos="gallery1">
-    <img src="path/to/your-thumbnail1.jpg">
-</a>
-<a href="path/to/your-image2.jpg" class="lumos-link" data-lumos="gallery1">
-    <img src="path/to/your-thumbnail2.jpg">
-</a>
-<a href="path/to/your-image3.jpg" class="lumos-link" data-lumos="gallery1">
-    <img src="path/to/your-thumbnail3.jpg">
-</a>
-
-<!-- Gallery 2 -->
-<a href="path/to/your-image4.jpg" class="lumos-link" data-lumos="gallery2">
-    <img src="path/to/your-thumbnail4.jpg">
-</a>
-<a href="path/to/your-image5.jpg" class="lumos-link" data-lumos="gallery2">
-    <img src="path/to/your-thumbnail5.jpg">
-</a>
-```
-
-#### Image description
-
-If you want to display a description for your image just add a value to the `alt` attribute of the image.
-
-``` html
-<img src="path/to/your-thumbnail1.jpg" alt="Image 1">
-```
+1. Add `lumos.css` to your HTML
+    ``` html
+    <link rel="stylesheet" href="lumos.css">
+    <link rel="stylesheet" href="your-stylesheet.css">
+    ```
+2. Add `lumos-min.js` to your HTML
+    ``` html
+    <script src="lumos-min.js"></script>
+    <script src="your-scripts.js"></script>
+    ```
+3. Add the `data-action="lumos"` tag to your images
+    ``` html
+    <img data-action="lumos" src="image.jpg">
+    ```
+4. Optional: If you want to have small images on your website and display a high resolution image only if the user clicks on it: add the `data-lumos-src` tag to your images
+    ``` html
+    <img data-action="lumos" src="small-image.jpg" data-lumos-src="big-image.jpg">
+    ```
+5. Et voilà, you are ready to go
 
 ## Customization
 
-### You can customize the look of your lumos overlay with your own CSS!
-
-|Customize|CSS Selector|
-|-----|-----|
-|General overlay of lumos|.lumos-container|
-|Lumos image|.lumos-container .lumos-img|
-|Image description|.lumos-container .lumos-alt-text|
-|All control buttons|.lumos-container svg|
-|Next button|.lumos-container .lumos-next|
-|Prev button|.lumos-container .lumos-prev|
-|Close button|.lumos-container .lumos-close|
-|Loading icon|.lumos-container .spinner-container .spinner|
+You can modify the look of the lumos overlay with your own stylesheets.
 
 ## License
 
 Licensed under the [MIT](LICENSE.md) license.
-
-100% FREE for commercial and non-commercial use!
-
-Feel free to contact me for some feedback!
