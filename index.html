@@ -1,49 +1,70 @@
 <html>
 
 <head>
-    <title>lumos.js</title>
+    <title>lumos</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#000000" />
     <link rel="stylesheet" href="/demo/demo.css">
     <link rel="stylesheet" href="/dist/css/lumos.css">
+    <link rel="icon" type="image/png" href="/favicon.png">
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="container-item">
-            <img class="example-img" data-action="lumos" src="./demo/img/img1.jpg" alt="Example 1">
+    <header>
+        <div class="container header-container">
+            <h1>Lumos</h1>
+            <h2>Lumos.js is a simple javascript library to add an image overlay to your website.</h2>
+            <p>
+                <li>
+                    <a href="https://github.com/oliverschwendener/lumos">Source Code</a>
+                </li>
+                <li>
+                    <a href="https://github.com/oliverschwendener/lumos/releases/latest">Download</a>
+                </li>
+                <li>
+                    <a href="https://github.com/oliverschwendener/lumos#usage">Documentation</a>
+                </li>
+            </p>
         </div>
-        <div class="container-item">
-            <img class="example-img" data-action="lumos" src="./demo/img/img2.jpg" alt="Example 2">
-        </div>
-        <div class="container-item">
-            <img class="example-img" data-action="lumos" src="./demo/img/img3.jpg" alt="Example 3">
-        </div>
-        <div class="container-item">
-            <img class="example-img" data-action="lumos" src="./demo/img/img4.jpg" alt="Example 4">
-        </div>
-        <div class="container-item">
-            <img class="example-img" data-action="lumos" src="./demo/img/img5.jpg" alt="Example 5">
-        </div>
-        <div class="container-item">
-            <img class="example-img" data-action="lumos" src="./demo/img/img6.jpg" alt="Example 6">
-        </div>
-        <div class="container-item">
-            <img class="example-img" data-action="lumos" src="./demo/img/img7.jpg" alt="Example 7">
-        </div>
-        <div class="container-item">
-            <img class="example-img" data-action="lumos" src="./demo/img/img8.jpg" alt="Example 8">
-        </div>
-        <div class="container-item">
-            <img class="example-img" data-action="lumos" src="./demo/img/img9.jpg" alt="Example 9">
-        </div>
-    </div>
+    </header>
 
-    <div class="lumos-container" id="lumos-container">
-        <img src="./demo/img/img1.jpg" alt="" class="lumos-image" id="lumos-image">
-    </div>
+    <main>
+        <div class="container gallery">
+            <div class="container-item">
+                <img class="example-img" data-action="lumos" src="./demo/img/256/example (1).jpg" data-lumos-src="./demo/img/2048/example (1).jpg"
+                    alt="Example 1">
+            </div>
+            <div class="container-item">
+                <img class="example-img" data-action="lumos" src="./demo/img/256/example (2).jpg" data-lumos-src="./demo/img/2048/example (2).jpg"
+                    alt="Example 2">
+            </div>
+            <div class="container-item">
+                <img class="example-img" data-action="lumos" src="./demo/img/256/example (3).jpg" data-lumos-src="./demo/img/2048/example (3).jpg"
+                    alt="Example 3">
+            </div>
+            <div class="container-item">
+                <img class="example-img" data-action="lumos" src="./demo/img/256/example (4).jpg" data-lumos-src="./demo/img/2048/example (4).jpg"
+                    alt="Example 4">
+            </div>
+            <div class="container-item">
+                <img class="example-img" data-action="lumos" src="./demo/img/256/example (5).jpg" data-lumos-src="./demo/img/2048/example (5).jpg"
+                    alt="Example 5">
+            </div>
+            <div class="container-item">
+                <img class="example-img" data-action="lumos" src="./demo/img/256/example (6).jpg" data-lumos-src="./demo/img/2048/example (6).jpg"
+                    alt="Example 6">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            Made by
+            <a href="https://oliverschwendener.ch">Oliver Schwendener</a>
+        </div>
+    </footer>
 
     <script src="/dist/js/lumos.js"></script>
 </body>
