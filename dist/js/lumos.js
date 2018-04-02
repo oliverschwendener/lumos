@@ -1,61 +1,74 @@
-let lumosContainer = document.getElementById('lumos-container');
-let lumosImage = document.getElementById('lumos-image');
-let elements = document.querySelectorAll('[data-action="lumos"]');
+(() => {
+    document.body.innerHTML += `<div id="lumos-container">
+                                    <img src="" id="lumos-image">
+                                </div>`;
 
-document.addEventListener('keyup', (event) => {
-    if (event.key === 'Escape') {
-        hideLumos();
-    }
-});
+    const lumosContainer = document.getElementById('lumos-container');
+    const lumosImage = document.getElementById('lumos-image');
+    const elements = document.querySelectorAll('[data-action="lumos"]');
+    const transitionSpeedInMilliseconds = 250;
 
-elements.forEach((element) => {
-    element.addEventListener('click', () => {
-        handleElementClick(element);
+    window.addEventListener('keyup', (event) => {
+        if (event.key === 'Escape') {
+            hideLumos();
+        }
     });
-});
 
-lumosContainer.addEventListener('click', (event) => {
-    hideLumos();
-});
+    elements.forEach((element) => {
+        element.addEventListener('click', () => {
+            handleElementClick(element);
+        });
+    });
 
-function handleElementClick(element) {
-    showLumos();
+    lumosContainer.addEventListener('click', hideLumos);
 
-    let imageUrl = element.attributes['data-lumos-src'] === undefined
-        ? element.attributes['src'].value
-        : element.attributes['data-image-url'].value;
-
-    updateLumosImage(imageUrl);
-}
-
-function updateLumosImage(imageUrl) {
-    lumosImage.attributes['src'].value = imageUrl;
-}
-
-function showLumos() {
-    if (!lumosContainer.classList.contains('visible')) {
-        lumosContainer.classList.add('visible');
+    function handleElementClick(htmlElement) {
+        updateLumosImage(getImageUrl(htmlElement));
+        showLumos();
     }
 
-    disableScroll();
-}
-
-function hideLumos() {
-    if (lumosContainer.classList.contains('visible')) {
-        lumosContainer.classList.remove('visible');
+    function getImageUrl(htmlElement) {
+        return htmlElement.attributes['data-lumos-src'] === undefined
+            ? htmlElement.attributes['src'].value
+            : htmlElement.attributes['data-lumos-src'].value;
     }
 
-    enableScroll();
-}
-
-function disableScroll() {
-    if (!document.body.classList.contains('scroll-disabled')) {
-        document.body.classList.add('scroll-disabled')
+    function updateLumosImage(imageUrl) {
+        lumosImage.attributes['src'].value = imageUrl;
     }
-}
 
-function enableScroll() {
-    if (document.body.classList.contains('scroll-disabled')) {
-        document.body.classList.remove('scroll-disabled');
+    function showLumos() {
+        if (!lumosContainerIsVisible()) {
+            lumosContainer.classList.remove('hidden');
+            lumosContainer.classList.add('visible');
+        }
+
+        disableScroll();
     }
-}
+
+    function hideLumos() {
+        if (lumosContainerIsVisible()) {
+            lumosContainer.classList.add('hidden');
+
+            setTimeout(() => {
+                lumosContainer.classList.remove('visible');
+                lumosContainer.classList.remove('hidden');
+                lumosImage.attributes['src'].value = '';
+            }, transitionSpeedInMilliseconds);
+        }
+
+        enableScroll();
+    }
+
+    function lumosContainerIsVisible() {
+        return lumosContainer.classList.contains('visible');
+    }
+
+    function disableScroll() {
+        document.body.classList.add('lumos-scroll-disabled');
+    }
+
+    function enableScroll() {
+        document.body.classList.remove('lumos-scroll-disabled');
+    }
+})();

@@ -1,12 +1,15 @@
-$transition-speed: 150ms;
+$deafult-background-color: #fff;
+$transition-speed: 250ms;
 $mobile-break: 768px;
+$button-margin: 10px;
+$button-size: 50px;
 
 @mixin transition() {
     transition: all $transition-speed ease-in-out;
 }
 
 body {
-    &.scroll-disabled {
+    &.lumos-scroll-disabled {
         overflow: hidden;
     }
 }
@@ -15,29 +18,36 @@ img[data-action=lumos] {
     cursor: zoom-in;
 }
 
-div.lumos-container {
+div#lumos-container {
     @include transition();
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.9);
+    background: $deafult-background-color;
     z-index: 1000;
     justify-content: center;
     align-items: center;
     display: flex;
-    transform: translateY(-25%) scale(0);
+    transform: scale(0);
     opacity: 0;
     cursor: zoom-out;
 
     &.visible {
-        opacity: 1;
-        transform: translateY(-0%) scale(1);
+        animation-name: animate-in;
+        animation-duration: $transition-speed;
+        animation-fill-mode: forwards;
+    }
+
+    &.hidden {
+        animation: animate-out;
+        animation-duration: $transition-speed;
+        animation-fill-mode: forwards;
     }
 }
 
-img.lumos-image {
+img#lumos-image {
     max-width: 100%;
     max-height: 100%;
     width: auto;
@@ -47,5 +57,35 @@ img.lumos-image {
     @media (min-width: $mobile-break) {
         max-width: 95%;
         max-height: 95%;
+    }
+}
+
+@keyframes animate-in {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    1% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes animate-out {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    99% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
     }
 }
