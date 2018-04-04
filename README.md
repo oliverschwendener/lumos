@@ -32,7 +32,7 @@ Check out the [official website](https://lumos.oliverschwendener.ch).
     ``` html
     <img data-action="lumos" src="image.jpg">
     ```
-4. Optional: If you want to have small images on your website and display a high resolution image only if the user clicks on it: add the `data-lumos-src` tag to your images
+4. Optional: If you want to have small images on your website and display a high resolution image only if the user clicks on it: add the `data-lumos-src` tag to your images with an url to your high resolution image
     ``` html
     <img data-action="lumos" src="small-image.jpg" data-lumos-src="big-image.jpg">
     ```
