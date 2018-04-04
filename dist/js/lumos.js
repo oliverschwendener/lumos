@@ -42,8 +42,6 @@
             lumosContainer.classList.remove('hidden');
             lumosContainer.classList.add('visible');
         }
-
-        disableScroll();
     }
 
     function hideLumos() {
@@ -56,19 +54,9 @@
                 lumosImage.attributes['src'].value = '';
             }, transitionSpeedInMilliseconds);
         }
-
-        enableScroll();
     }
 
     function lumosContainerIsVisible() {
         return lumosContainer.classList.contains('visible');
-    }
-
-    function disableScroll() {
-        document.body.classList.add('lumos-scroll-disabled');
-    }
-
-    function enableScroll() {
-        document.body.classList.remove('lumos-scroll-disabled');
     }
 })();

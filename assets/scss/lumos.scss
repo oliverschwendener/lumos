@@ -8,12 +8,6 @@ $button-size: 50px;
     transition: all $transition-speed ease-in-out;
 }
 
-body {
-    &.lumos-scroll-disabled {
-        overflow: hidden;
-    }
-}
-
 img[data-action=lumos] {
     cursor: zoom-in;
 }
