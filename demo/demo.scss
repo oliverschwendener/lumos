@@ -24,6 +24,10 @@ h2 {
     margin-bottom: 25px;
 }
 
+h3 {
+    font-weight: 600;
+}
+
 a, a:link, a:visited, a:active {
     @include transition();
     color: #03A9F4;
@@ -59,6 +63,15 @@ div.container {
         margin-top: 50px;
         margin-bottom: 50px;
         text-align: center;
+    }
+}
+
+div.link-container {
+    display: flex;
+    flex-direction: row;
+
+    div {
+        width: 50%;
     }
 }
 
