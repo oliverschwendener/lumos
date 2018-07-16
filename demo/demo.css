@@ -32,7 +32,7 @@ div.container {
     div.container {
       flex-direction: row; } }
   div.container.header-container {
-    padding: 0 5px;
+    padding: 0 25px;
     margin-bottom: 50px; }
   div.container.gallery {
     flex-direction: row;
@@ -45,16 +45,23 @@ div.container {
 
 div.link-container {
   display: flex;
-  flex-direction: row; }
+  flex-direction: column; }
   div.link-container div {
-    width: 50%; }
+    width: 100%; }
+    @media (min-width: 768px) {
+      div.link-container div {
+        width: 50%; } }
+  @media (min-width: 768px) {
+    div.link-container {
+      flex-direction: row; } }
 
 div.container-item {
   width: 100%;
-  padding: 5px;
+  padding: 0 25px 25px;
   box-sizing: border-box; }
   @media (min-width: 768px) {
     div.container-item {
+      padding: 25px;
       width: 50%; } }
 
 img.example-img {

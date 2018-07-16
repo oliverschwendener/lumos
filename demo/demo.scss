@@ -1,4 +1,4 @@
-$grid-padding: 5px;
+$default-padding: 25px;
 $mobile-break: 768px;
 
 @mixin transition() {
@@ -49,7 +49,7 @@ div.container {
     }
 
     &.header-container {
-        padding: 0 $grid-padding;
+        padding: 0 $default-padding;
         margin-bottom: 50px;
     }
 
@@ -68,19 +68,28 @@ div.container {
 
 div.link-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     div {
-        width: 50%;
+        width: 100%;
+
+        @media (min-width: $mobile-break) {
+            width: 50%;
+        }
+    }
+
+    @media (min-width: $mobile-break) {
+        flex-direction: row;
     }
 }
 
 div.container-item {
     width: 100%;
-    padding: $grid-padding;
+    padding: 0 $default-padding $default-padding;
     box-sizing: border-box;
 
     @media (min-width: $mobile-break) {
+        padding: $default-padding;
         width: 50%;
     }
 }
